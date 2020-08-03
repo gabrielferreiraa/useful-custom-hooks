@@ -1,0 +1,42 @@
+{
+  "author": {
+    "email": "hi.gabrielferreira@gmail.com",
+    "name": "Gabriel Ferreira",
+    "url": "https://gabrielferreira.dev"
+  },
+  "name": "useful-custom-hooks",
+  "version": "1.0.0",
+  "license": "MIT",
+  "homepage": "https://github.com/gabrielferreiraa/useful-custom-hooks#readme",
+  "keywords": [
+    "react",
+    "hook",
+    "javascript",
+    "typescript",
+    "languages",
+    "useful custom hooks"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabrielferreiraa/useful-custom-hooks"
+  },
+  "bugs": {
+    "url": "https://github.com/gabrielferreiraa/useful-custom-hooks/issues"
+  },
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "files": [
+    "lib/"
+  ],
+  "devDependencies": {
+    "@types/react": "^16.9.44",
+    "typescript": "^3.9.7"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1"
+  },
+  "scripts": {
+    "tsc": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "prepublish": "yarn tsc"
+  }
+}
