@@ -7,7 +7,7 @@ enum MediaTypes {
 
 type IUseNavigatorPermission = keyof typeof MediaTypes;
 const useNavigatorPermission = (name: IUseNavigatorPermission) => {
-  const [status, setStatus] = useState<PermissionState | null>(null);  
+  const [status, setStatus] = useState<PermissionState | null>(null);
 
   const requestAccess = useCallback(async () => {
     try {
