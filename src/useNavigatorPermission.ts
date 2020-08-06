@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 enum MediaTypes {
   camera = 'video',
@@ -9,13 +9,13 @@ type IUseNavigatorPermission = keyof typeof MediaTypes;
 const useNavigatorPermission = (name: IUseNavigatorPermission) => {
   const [status, setStatus] = useState<PermissionState | null>(null);
 
-  const requestAccess = async () => {
+  const requestAccess = useCallback(async () => {
     try {
       await navigator.mediaDevices.getUserMedia({ [MediaTypes[name]]: true });
     } catch (err) {
-      console.log(`[${name}] ->  ${err.message}`)
+      console.log(`[${name}] ->  ${err.message}`);
     }
-  };
+  }, [name]);
 
   useEffect(() => {
     if (window?.navigator?.permissions) {
